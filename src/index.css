@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+body {
+  background: #0a0a0c;
+  color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+/* বাইরের ব্যাকগ্রাউন্ড */
+.page-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, #4c2fd6 0%, transparent 70%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, #3b1fb8 0%, transparent 70%),
+    #05050a;
+}
+
+/* ভেতরের ফ্রেম: কালোর উপর বেগুনি গ্লো */
+.frame-bg {
+  background:
+    radial-gradient(ellipse 70% 35% at 50% 0%, rgba(124, 77, 255, 0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(91, 61, 245, 0.7) 0%, transparent 70%),
+    radial-gradient(circle at 85% 40%, rgba(91, 61, 245, 0.25) 0%, transparent 50%),
+    #0a0a0c;
+}
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+.glow-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section, footer {
+  scroll-margin-top: 90px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 35s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
